@@ -2,6 +2,11 @@
 using Microsoft.VisualBasic.CompilerServices;
 using MyType = Course2ConsoleCore.TestType.Person;
 
+// Вычисление числа 2 в степени 5
+var power = Math.Pow(2, 5);
+
+// Квадратный корень числа 9
+var squreRoot = Math.Sqrt(9);
 
 Console.Write("Enter some double value: ");
 string inputValue1 = Console.ReadLine();
