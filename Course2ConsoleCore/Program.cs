@@ -2,6 +2,197 @@
 using Microsoft.VisualBasic.CompilerServices;
 using MyType = Course2ConsoleCore.TestType.Person;
 
+
+Console.Write("Enter some double value: ");
+string inputValue1 = Console.ReadLine();
+
+//var inputValueInt = Convert.ToInt32(inputValue1);
+var inputValueInt = 0;
+if (int.TryParse(inputValue1, out inputValueInt))
+    Console.WriteLine($"Succsess: {inputValueInt}");
+else
+    Console.WriteLine($"Parsing failed: '{inputValue1}'");
+
+//var inputValueDouble = Convert.ToDouble(inputValue1);
+
+//var t = inputValueDouble;
+
+
+//// inputValue1 может прийти строка: 342523423423.123141532049874
+//double inputValueDouble2 = 0.0;
+//if(double.TryParse(inputValue1, out inputValueDouble2))
+//    Console.WriteLine($"Succsess: {inputValueDouble2}");
+//else
+//    Console.WriteLine($"Parsing failed: '{inputValue1}'");
+
+// Задача - вывести таблицу умножения на экран
+var array = new int[9, 9];
+// i[.] 0 1 2 3 4 5 6 7 8
+//j[0]: 0 0 0 0 0 0 0 0 0 
+//j[1]: 0 0 0 0 0 0 0 0 0 
+//j[2]: 0 0 0 0 0 0 0 0 0 
+//j[3]: 0 0 0 0 0 0 0 0 0 
+//j[4]: 0 0 0 0 0 0 0 0 0 
+//j[5]: 0 0 0 0 0 0 0 0 0 
+//j[6]: 0 0 0 0 0 0 0 0 0 
+//j[7]: 0 0 0 0 0 0 0 0 0 
+//j[8]: 0 0 0 0 0 0 0 0 0 
+
+
+for (var j = 0; j < 9; j++)
+{
+    for (var i = 0; i < 9; i++)
+    {
+        array[i, j] = (i + 1) * (j + 1);
+    }
+}
+
+for (var j = 0; j < 9; j++)
+{
+    OutputRow(array, j);
+}
+
+void OutputRow(int[,] array_m, int j)
+{
+    var stringOut = string.Empty;
+    for (var i = 0; i < 9; i++)
+    {
+        //                1x1 = 1
+        stringOut += $"{i + 1}x{j + 1} = {array_m[i,j]} ";
+        //stringOut += string.Format("{0}x{1} = {2}", i + 1, j + 1, array_m[i, j]);
+    }
+
+    Console.WriteLine($"Output row: {stringOut}");
+}
+
+//==============================================================================
+var resDouble = Test.Multiply(45.56, 12.35);
+var resInt = Test.Multiply(45, 12);
+
+Console.WriteLine(resDouble);
+Console.WriteLine(resInt);
+
+var arrayInt = new int[] { 4, 3, 5, 2, 6, 2, 3, 10, 9, 32 };
+var arrayDouble = new double[] { 4.56, 3.3, 5.01, 2.1, 6.9, 2.2, 3.3, 10.4, 9.2, 32.8 };
+
+ArrayOutput(arrayInt);
+Console.WriteLine("-------------------------------------");
+ArrayOutput(arrayDouble);
+Console.WriteLine("=====================================");
+
+Test.Swap(ref arrayInt[4], ref arrayInt[5]);
+Test.Swap(ref arrayDouble[4], ref arrayDouble[5]);
+
+ArrayOutput(arrayInt);
+Console.WriteLine("-------------------------------------");
+ArrayOutput(arrayDouble);
+Console.WriteLine("=====================================");
+
+int param = 10;
+ChangeParameter(ref param);
+Console.WriteLine(param); // <-???
+
+int someParam;
+SetValue(out someParam);
+Console.WriteLine(param); // <-???
+
+bool a;
+
+return;
+
+void ChangeParameter2(int a)
+{
+    a = 5;
+}
+
+void ChangeParameter(ref int a)
+{
+    a = 5;
+}
+
+void SetValue(out int b)
+{
+    b = 12;
+}
+
+void ProcessParam(in int c)
+{
+    //c = 14;
+}
+
+void ArrayOutput<T>(T[] array)
+{
+    var res = string.Join(", ", array);
+    Console.WriteLine(res);
+}
+
+class Test
+{
+                                 // 5         7
+    public static void Swap<T>(ref T a, ref T b)
+    {
+        var temp = a;   // temp <-5, a == 5, b == 7
+        a = b;            // temp == 5, a <-7, b == 7; 
+        b = temp;         // temp == 5, b <- 5, a == 7
+    }
+
+    public static T[] ReturnArray<T>(int size)
+    {
+        return new T[size];
+    }
+    
+    public static int Multiply(int a, int b)
+    {
+        return a * b;
+    }
+
+    public static double Multiply(double a, double b)
+    {
+        return a * b;
+    }
+}
+
+/* ======================================================================= СходитьЗаХлебом(Х)
+ * 1. Выходим из дома
+ * 2. Захоздим в лифт      \ Под Программой - Ехать НаЛИфтеНаЭтаж(X) 
+ * 3. Спускаемся на этаж 1 /
+ * 4. Выходим из подъеда
+ * 5. выходим на тротуар
+ * 6. ЖДём зелёного света
+ * 7. Переходжим длорогу
+ * 8. Заходим в магазим
+ * 9. Покупаем нужное
+ * 10. Выходим из магазина
+ * 11. ..
+ ========================================================================= */
+
+//var arrayInt = new long[10];
+
+//// Ввести 10 элементов
+//arrayInt[0] = 1;
+//arrayInt[1] = 441;
+//arrayInt[2] = 409238;
+//arrayInt[3] = 423;
+//arrayInt[4] = 348;
+//arrayInt[5] = 4902;
+//arrayInt[6] = 324;
+//arrayInt[7] = 6404;
+//arrayInt[8] = 56;
+//arrayInt[9] = 321;
+
+//// Показать эти 10 элементов на экране.
+//ArrayOutput(arrayInt);
+
+//Console.WriteLine("----------------------------");
+
+//// Обработать - пройти по каждому элементу массива и перезаписать его - его квадратом числа.
+//for (var i = 0; i < arrayInt.Length; i++)
+//    arrayInt[i] = arrayInt[i] * arrayInt[i]; // <- 441 * 441
+
+//Console.WriteLine("Result: ");
+//// Показать эти 10 элементов - уже новые - на экране.
+//ArrayOutput(arrayInt);
+
 ////bool a = false;
 ////bool b = true;
 
@@ -129,40 +320,6 @@ using MyType = Course2ConsoleCore.TestType.Person;
 // 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000
 // 10000000 00000000 00000000 00000000 00000000 00000000 00000000 00000001
 
-
-var arrayInt = new long[10];
-
-// Ввести 10 элементов
-arrayInt[0] = 1;
-arrayInt[1] = 441;
-arrayInt[2] = 409238;
-arrayInt[3] = 423;
-arrayInt[4] = 348;
-arrayInt[5] = 4902;
-arrayInt[6] = 324;
-arrayInt[7] = 6404;
-arrayInt[8] = 56;
-arrayInt[9] = 321;
-
-// Показать эти 10 элементов на экране.
-ArrayOutput(arrayInt);
-
-Console.WriteLine("----------------------------");
-
-// Обработать - пройти по каждому элементу массива и перезаписать его - его квадратом числа.
-for (var i = 0; i < arrayInt.Length; i++)
-    arrayInt[i] = arrayInt[i] * arrayInt[i]; // <- 441 * 441
-
-Console.WriteLine("Result: ");
-// Показать эти 10 элементов - уже новые - на экране.
-ArrayOutput(arrayInt);
-
-void ArrayOutput(long[] array)
-{
-    for (var i = 0; i < array.Length; i++)
-        Console.WriteLine(array[i]);
-}
-
 //int[] numsNonInitialized = new int[12];
 //int[] numsNonInitialized2 = new int[120];
 ////numsNonInitialized2[0] = 34;
@@ -264,22 +421,22 @@ void ArrayOutput(long[] array)
 //nums3[4] = new int[10];
 //nums3[5] = new int[125];
 
-enum TestEnum
-{
-    Testsdfasdfasdf, // by default = 0
-    Test1 = 12, // by default = 0
-    Test2 = 15,
-    Test3 = 16,
-}
+//enum TestEnum
+//{
+//    Testsdfasdfasdf, // by default = 0
+//    Test1 = 12, // by default = 0
+//    Test2 = 15,
+//    Test3 = 16,
+//}
 
-[Flags]
-enum ControlDirection
-{
-    HorizontalWork = 0b0001,
-    HorizontalRight = 0b0010,
-    VerticalWork = 0b0100,
-    VerticalTop = 0b1000,
+//[Flags]
+//enum ControlDirection
+//{
+//    HorizontalWork = 0b0001,
+//    HorizontalRight = 0b0010,
+//    VerticalWork = 0b0100,
+//    VerticalTop = 0b1000,
 
-    RightTurn = HorizontalWork | HorizontalRight,
-    LeftTurn = HorizontalWork | ~HorizontalRight,
-}
+//    RightTurn = HorizontalWork | HorizontalRight,
+//    LeftTurn = HorizontalWork | ~HorizontalRight,
+//}
