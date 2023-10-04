@@ -1,5 +1,4 @@
 ﻿using System.Xml.Schema;
-using Microsoft.VisualBasic.CompilerServices;
 using MyType = Course2ConsoleCore.TestType.Person;
 
 // Вычисление числа 2 в степени 5
@@ -10,6 +9,7 @@ var squreRoot = Math.Sqrt(9);
 
 Console.Write("Enter some double value: ");
 string inputValue1 = Console.ReadLine();
+
 
 //var inputValueInt = Convert.ToInt32(inputValue1);
 var inputValueInt = 0;
