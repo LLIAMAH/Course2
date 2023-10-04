@@ -1,4 +1,171 @@
-﻿//using System.Xml.Schema;
+﻿
+using System.ComponentModel.DataAnnotations;
+
+var t1 = 10;
+
+PersonStruct personStruct; // <-----
+PersonClass personClass;
+
+personStruct = new PersonStruct();
+personClass = new PersonClass();
+
+var t2 = 10;
+
+var perStruct1 = new PersonStruct(32); // == 32
+var perStruct2 = new PersonStruct(115); // == 115
+
+perStruct1 = perStruct2; // 1 = 115, 2 = 115
+
+perStruct1.SomeField = 7; // 1 == 7, 2 = 115
+perStruct2.SomeField = 9; // 1 == 7, 2 = 9
+
+perStruct2.
+
+var tt = perStruct1.SomeField;
+
+var b = 10;
+var a = b; // a == 10
+b = 5; // b == 5, a == 10
+a = 0; /////????
+
+var pers1 = new PersonClass();
+var pers2 = new PersonClass(); // <----
+
+pers1 = pers2;
+
+
+pers1.SomeField = 50;
+pers2.SomeField = 14;
+
+
+
+var t = pers1.SomeField;
+
+// struct
+// class
+// record (последнюю ввели не так давно)
+
+struct PersonStruct
+{
+    private int someField = 5;
+
+    public int SomeField
+    {
+        get { return someField; } 
+        set {  someField = value; }
+    }
+
+    public PersonStruct(int a)
+    {
+        someField = a;
+    }
+
+    public int GetSomeFieldData()
+    {
+        return someField;
+    }
+}
+
+class PersonClass
+{
+    private int someField = 10;
+
+    protected string Name;
+
+    internal string SomeData = ";asdas;dfas;fgasdfg";
+
+    public PersonClass() { }
+
+    public int SomeField
+    {
+        get
+        {
+            someField++;
+            return someField;
+        }
+        set
+        {
+            if(Validate(value))
+                someField = value;
+        }
+    }
+
+    private bool Validate(int v)
+    {
+        if (v > 18)
+            return true;
+
+        return false;
+    }
+
+    public int GetSomeFieldData()
+    {
+        return someField;
+    }
+}
+
+class PersonClass2 : PersonClass
+{
+    public string Address;
+}
+
+
+//var test = true;
+//var result = 0;
+
+//if (test)
+//{
+//    result = 1;
+//}
+//else
+//{
+//    result = 5;
+//}
+
+//result = (test && result == 0) ? ((test && result == 0) ? ((test && result == 0) ? (1) : 5) : (test && result == 0) ? (1) : 5) : (test && result == 0) ? (1) : 5;
+
+//var someNumber = 5;
+
+//if (someNumber > 1 && someNumber < 3)
+//{
+
+//} else if (someNumber == 5)
+//{
+
+//}
+//else if (someNumber == 4)
+//{
+
+//}
+//else if (someNumber == 6)
+//{
+
+//}
+
+//var result = 0;
+//switch (someNumber)
+//{
+//    case 2:
+//    case 4:
+//    {
+//        result = 4;
+//        result = 4;
+//        result = 4;
+//        result = 4;
+//    }
+//        break;
+//    case 5:
+//        result = 5;
+//        break;
+//    case 6:
+//        result = 6;
+//        break;
+//    default:
+//        Console.WriteLine($"Some input error: {someNumber}");
+//        break;
+//}
+
+//using System.Xml.Schema;
 //using MyType = Course2ConsoleCore.TestType.Person;
 
 //// Вычисление числа 2 в степени 5
@@ -145,7 +312,7 @@
 //    {
 //        return new T[size];
 //    }
-    
+
 //    public static int Multiply(int a, int b)
 //    {
 //        return a * b;
