@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34024.191
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Course2ConsoleCore", "Course2ConsoleCore\Course2ConsoleCore.csproj", "{87CF50B5-612D-4F07-BDCA-E0907C705CDB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Course2ConsoleCore", "Course2ConsoleCore\Course2ConsoleCore.csproj", "{87CF50B5-612D-4F07-BDCA-E0907C705CDB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Course2ConsoleCore5", "Course2ConsoleCore5\Course2ConsoleCore5.csproj", "{8255D9B7-14A4-42B9-8DD9-5B448EC29185}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Course2ConsoleCore5", "Course2ConsoleCore5\Course2ConsoleCore5.csproj", "{8255D9B7-14A4-42B9-8DD9-5B448EC29185}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibrary1", "ClassLibrary1\ClassLibrary1.csproj", "{618885F3-31BA-4008-BA2B-9D2F009DB7DB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{8255D9B7-14A4-42B9-8DD9-5B448EC29185}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8255D9B7-14A4-42B9-8DD9-5B448EC29185}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8255D9B7-14A4-42B9-8DD9-5B448EC29185}.Release|Any CPU.Build.0 = Release|Any CPU
+		{618885F3-31BA-4008-BA2B-9D2F009DB7DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{618885F3-31BA-4008-BA2B-9D2F009DB7DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{618885F3-31BA-4008-BA2B-9D2F009DB7DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{618885F3-31BA-4008-BA2B-9D2F009DB7DB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
