@@ -1,65 +1,28 @@
 ﻿namespace Course2ConsoleCore.TestType
 {
-    public class Person
+    public partial class Person
     {
-        private int id;
-
-        protected string SomeValue;
-
-        public int Id
-        {
-            get
-            {
-                return id;
-            }
-            private set
-            {
-                if(value < 0)
-                    return;
-
-                id = value;
-            }
-        }
-
-        public Person()
-        {
-
-        }
-
-        public void SetId(string data)// <== "23141"
-        {
-            if (Int32.TryParse(data, out var dataConverted))
-            {
-                this.Id = dataConverted;
-            }
-        }
+        public string Name { get; set; }
+        public string Surname { get; set; }
     }
 
-    public class PersonChild : Person
+    public partial class Person
     {
-        public PersonChild()
-        {
-            
-        }
-
-        public void SetValue(string data)
-        {
-            //this.SomeValue = data;
-            base.SomeValue = data;
-        }
+        public DateTime BirthDate { get; set; }
+        public double Height { get; set; }
+        public int EyesCount { get; set; }
     }
 
-    public class PersonChild2 : Person
+    public static class PersonStringExt
     {
-        private string SomeValue;
-        public PersonChild2()
+        public static string StringPerson(this string template, Person person)
         {
-
+            return string.Format (template, person.Name, person.Surname, person.BirthDate, person.Height);
         }
 
-        public void SetValue2(string data)
+        public static string ToStringFormatted(this double input)
         {
-            this.SomeValue = data;
+            return input.ToString("###.000");
         }
     }
 

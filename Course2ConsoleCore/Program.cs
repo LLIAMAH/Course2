@@ -1,4 +1,49 @@
-﻿//var a = 10;
+﻿using Course2ConsoleCore.TestType;
+
+var a = "Hello";
+var b = "World";
+
+var dateTimeNow = DateTime.Now;
+
+var person = new Person()
+{
+    Name = "Vasiliy",
+    Surname = "H",
+    BirthDate = new DateTime(1982, 10, 25),
+    Height = 1.82,
+    EyesCount = 2
+};
+
+var resultConcat = "Hello, " + person.Name + " " + person.Surname 
+                   + ". Your birthdate is: " 
+                   + person.BirthDate.Date.ToString("yyyy/MMMM/dd HH:mm:ss.fff");
+
+var resultFormat = string.Format("Hello, {0} {1}. Your birthdate is: {2:yyyy/MM/dd}. Your height: {3}",
+    person.Name, person.Surname, person.BirthDate, person.Height);
+
+var resultInternalFormat =
+    $"Hello, {person.Name} {person.Surname}. Your birthdate is: {person.BirthDate:yyyy/MM/dd}. Your height: {person.Height.ToStringFormatted()}";
+
+var character = resultInternalFormat[3];
+
+var output = "Hello, {0} {1}. Your birthdate is: {2:yyyy/MM/dd}. Your height: {3}".StringPerson(person);
+
+var t = "sdafsdfasdfasdf".StringPerson(person);
+
+var length = resultInternalFormat.Length;
+var count = resultInternalFormat.Count();
+var longCount = resultInternalFormat.LongCount();
+Console.WriteLine($"Length: {length}; Count: {count}; Long count: {longCount}");
+
+if (resultInternalFormat.Contains("birthdate"))
+    Console.WriteLine("True");
+else
+    Console.WriteLine("False");
+
+Console.WriteLine(resultInternalFormat);
+
+
+//var a = 10;
 //var b = 20 - 10;
 //var c = 10 - b;
 
