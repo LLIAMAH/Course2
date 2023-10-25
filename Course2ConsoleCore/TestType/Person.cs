@@ -4,6 +4,21 @@
     {
         public string Name { get; set; }
         public string Surname { get; set; }
+
+        public override bool Equals(object? obj)
+        {
+            var converted = obj as Person;
+            if(converted == null) return false;
+
+            return this.Name == converted.Name 
+                   && this.Surname == converted.Surname;
+        }
+
+        public override string ToString()
+        {
+            //"Course2ConsoleCore.TestType.Person"
+            return $"Name: {this.Name}, Surname: {this.Surname}";
+        }
     }
 
     public partial class Person
