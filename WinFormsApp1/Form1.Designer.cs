@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             bnAdd = new Button();
             tbOperand1 = new TextBox();
             tbOperand2 = new TextBox();
@@ -44,9 +45,15 @@
             lUserName = new Label();
             lPassword = new Label();
             tbPassword = new TextBox();
+            contextMenuStrip1 = new ContextMenuStrip(components);
+            meni1ToolStripMenuItem = new ToolStripMenuItem();
+            menui2ToolStripMenuItem = new ToolStripMenuItem();
+            menu3ToolStripMenuItem = new ToolStripMenuItem();
             checkBox1 = new CheckBox();
             checkBox2 = new CheckBox();
             groupBox1 = new GroupBox();
+            textBox2 = new TextBox();
+            textBox1 = new TextBox();
             panel1 = new Panel();
             radioButton3 = new RadioButton();
             radioButton4 = new RadioButton();
@@ -57,11 +64,23 @@
             numericUpDown1 = new NumericUpDown();
             richTextBox1 = new RichTextBox();
             radioButton5 = new RadioButton();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
+            menuStrip1 = new MenuStrip();
+            fileToolStripMenuItem = new ToolStripMenuItem();
+            newToolStripMenuItem = new ToolStripMenuItem();
+            openToolStripMenuItem = new ToolStripMenuItem();
+            test1ToolStripMenuItem = new ToolStripMenuItem();
+            test2ToolStripMenuItem = new ToolStripMenuItem();
+            saveToolStripMenuItem = new ToolStripMenuItem();
+            toolStripMenuItem1 = new ToolStripSeparator();
+            editToolStripMenuItem = new ToolStripMenuItem();
+            editConfigureToolStripMenuItem = new ToolStripMenuItem();
+            comboBox1 = new ComboBox();
+            button2 = new Button();
+            contextMenuStrip1.SuspendLayout();
             groupBox1.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
+            menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // bnAdd
@@ -76,7 +95,7 @@
             // 
             // tbOperand1
             // 
-            tbOperand1.Location = new Point(12, 12);
+            tbOperand1.Location = new Point(68, 175);
             tbOperand1.Name = "tbOperand1";
             tbOperand1.Size = new Size(152, 31);
             tbOperand1.TabIndex = 1;
@@ -91,7 +110,7 @@
             // 
             // bnSubstract
             // 
-            bnSubstract.Location = new Point(269, 12);
+            bnSubstract.Location = new Point(594, 196);
             bnSubstract.Name = "bnSubstract";
             bnSubstract.Size = new Size(93, 68);
             bnSubstract.TabIndex = 3;
@@ -101,7 +120,7 @@
             // 
             // bnMultiply
             // 
-            bnMultiply.Location = new Point(368, 12);
+            bnMultiply.Location = new Point(437, 117);
             bnMultiply.Name = "bnMultiply";
             bnMultiply.Size = new Size(93, 68);
             bnMultiply.TabIndex = 4;
@@ -111,7 +130,7 @@
             // 
             // bnDivide
             // 
-            bnDivide.Location = new Point(467, 12);
+            bnDivide.Location = new Point(572, 96);
             bnDivide.Name = "bnDivide";
             bnDivide.Size = new Size(93, 68);
             bnDivide.TabIndex = 5;
@@ -201,10 +220,36 @@
             // 
             // tbPassword
             // 
+            tbPassword.ContextMenuStrip = contextMenuStrip1;
             tbPassword.Location = new Point(6, 36);
             tbPassword.Name = "tbPassword";
             tbPassword.Size = new Size(412, 31);
             tbPassword.TabIndex = 14;
+            // 
+            // contextMenuStrip1
+            // 
+            contextMenuStrip1.ImageScalingSize = new Size(24, 24);
+            contextMenuStrip1.Items.AddRange(new ToolStripItem[] { meni1ToolStripMenuItem, menui2ToolStripMenuItem, menu3ToolStripMenuItem });
+            contextMenuStrip1.Name = "contextMenuStrip1";
+            contextMenuStrip1.Size = new Size(149, 100);
+            // 
+            // meni1ToolStripMenuItem
+            // 
+            meni1ToolStripMenuItem.Name = "meni1ToolStripMenuItem";
+            meni1ToolStripMenuItem.Size = new Size(148, 32);
+            meni1ToolStripMenuItem.Text = "Meni 1";
+            // 
+            // menui2ToolStripMenuItem
+            // 
+            menui2ToolStripMenuItem.Name = "menui2ToolStripMenuItem";
+            menui2ToolStripMenuItem.Size = new Size(148, 32);
+            menui2ToolStripMenuItem.Text = "Menui 2";
+            // 
+            // menu3ToolStripMenuItem
+            // 
+            menu3ToolStripMenuItem.Name = "menu3ToolStripMenuItem";
+            menu3ToolStripMenuItem.Size = new Size(148, 32);
+            menu3ToolStripMenuItem.Text = "Menu 3";
             // 
             // checkBox1
             // 
@@ -240,6 +285,20 @@
             groupBox1.TabIndex = 22;
             groupBox1.TabStop = false;
             groupBox1.Text = "Имя, фамилиЁ отчество";
+            // 
+            // textBox2
+            // 
+            textBox2.Location = new Point(6, 119);
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(412, 31);
+            textBox2.TabIndex = 16;
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(6, 79);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(412, 31);
+            textBox1.TabIndex = 15;
             // 
             // panel1
             // 
@@ -303,6 +362,10 @@
             monthCalendar1.Location = new Point(726, 31);
             monthCalendar1.Name = "monthCalendar1";
             monthCalendar1.TabIndex = 27;
+            monthCalendar1.DateSelected += monthCalendar1_DateSelected;
+            monthCalendar1.KeyDown += monthCalendar1_KeyDown;
+            monthCalendar1.MouseDown += monthCalendar1_MouseDown;
+            monthCalendar1.MouseUp += monthCalendar1_MouseUp;
             // 
             // numericUpDown1
             // 
@@ -331,25 +394,100 @@
             radioButton5.Text = "radioButton5";
             radioButton5.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // menuStrip1
             // 
-            textBox1.Location = new Point(6, 79);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(412, 31);
-            textBox1.TabIndex = 15;
+            menuStrip1.ImageScalingSize = new Size(24, 24);
+            menuStrip1.Items.AddRange(new ToolStripItem[] { fileToolStripMenuItem, editToolStripMenuItem });
+            menuStrip1.Location = new Point(0, 0);
+            menuStrip1.Name = "menuStrip1";
+            menuStrip1.Size = new Size(2108, 33);
+            menuStrip1.TabIndex = 31;
+            menuStrip1.Text = "menuStrip1";
             // 
-            // textBox2
+            // fileToolStripMenuItem
             // 
-            textBox2.Location = new Point(6, 119);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(412, 31);
-            textBox2.TabIndex = 16;
+            fileToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { newToolStripMenuItem, openToolStripMenuItem, saveToolStripMenuItem, toolStripMenuItem1 });
+            fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            fileToolStripMenuItem.Size = new Size(54, 29);
+            fileToolStripMenuItem.Text = "File";
+            // 
+            // newToolStripMenuItem
+            // 
+            newToolStripMenuItem.Name = "newToolStripMenuItem";
+            newToolStripMenuItem.Size = new Size(158, 34);
+            newToolStripMenuItem.Text = "New";
+            // 
+            // openToolStripMenuItem
+            // 
+            openToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { test1ToolStripMenuItem, test2ToolStripMenuItem });
+            openToolStripMenuItem.Name = "openToolStripMenuItem";
+            openToolStripMenuItem.Size = new Size(158, 34);
+            openToolStripMenuItem.Text = "Open";
+            // 
+            // test1ToolStripMenuItem
+            // 
+            test1ToolStripMenuItem.Name = "test1ToolStripMenuItem";
+            test1ToolStripMenuItem.Size = new Size(154, 34);
+            test1ToolStripMenuItem.Text = "Test1";
+            test1ToolStripMenuItem.Click += test1ToolStripMenuItem_Click;
+            // 
+            // test2ToolStripMenuItem
+            // 
+            test2ToolStripMenuItem.Name = "test2ToolStripMenuItem";
+            test2ToolStripMenuItem.Size = new Size(154, 34);
+            test2ToolStripMenuItem.Text = "Test2";
+            // 
+            // saveToolStripMenuItem
+            // 
+            saveToolStripMenuItem.Name = "saveToolStripMenuItem";
+            saveToolStripMenuItem.Size = new Size(158, 34);
+            saveToolStripMenuItem.Text = "Save";
+            // 
+            // toolStripMenuItem1
+            // 
+            toolStripMenuItem1.Name = "toolStripMenuItem1";
+            toolStripMenuItem1.Size = new Size(155, 6);
+            // 
+            // editToolStripMenuItem
+            // 
+            editToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { editConfigureToolStripMenuItem });
+            editToolStripMenuItem.Name = "editToolStripMenuItem";
+            editToolStripMenuItem.Size = new Size(58, 29);
+            editToolStripMenuItem.Text = "&Edit";
+            // 
+            // editConfigureToolStripMenuItem
+            // 
+            editConfigureToolStripMenuItem.Name = "editConfigureToolStripMenuItem";
+            editConfigureToolStripMenuItem.Size = new Size(246, 34);
+            editConfigureToolStripMenuItem.Text = "Edit && Configure";
+            // 
+            // comboBox1
+            // 
+            comboBox1.DataSource = checkedListBox1.CustomTabOffsets;
+            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(1574, 166);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(408, 33);
+            comboBox1.TabIndex = 32;
+            // 
+            // button2
+            // 
+            button2.Location = new Point(1146, 606);
+            button2.Name = "button2";
+            button2.Size = new Size(225, 97);
+            button2.TabIndex = 33;
+            button2.Text = "button2";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(2108, 827);
+            Controls.Add(button2);
+            Controls.Add(comboBox1);
             Controls.Add(radioButton5);
             Controls.Add(richTextBox1);
             Controls.Add(numericUpDown1);
@@ -376,17 +514,22 @@
             Controls.Add(tbOperand2);
             Controls.Add(tbOperand1);
             Controls.Add(bnAdd);
+            Controls.Add(menuStrip1);
+            MainMenuStrip = menuStrip1;
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Some super form";
+            Text = "New";
             Load += Form1_Load;
+            contextMenuStrip1.ResumeLayout(false);
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
+            menuStrip1.ResumeLayout(false);
+            menuStrip1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -424,5 +567,21 @@
         private TextBox textBox2;
         private TextBox textBox1;
         private RadioButton radioButton5;
+        private MenuStrip menuStrip1;
+        private ToolStripMenuItem fileToolStripMenuItem;
+        private ToolStripMenuItem newToolStripMenuItem;
+        private ToolStripMenuItem openToolStripMenuItem;
+        private ToolStripMenuItem saveToolStripMenuItem;
+        private ToolStripSeparator toolStripMenuItem1;
+        private ToolStripMenuItem editToolStripMenuItem;
+        private ToolStripMenuItem test1ToolStripMenuItem;
+        private ToolStripMenuItem test2ToolStripMenuItem;
+        private ToolStripMenuItem editConfigureToolStripMenuItem;
+        private ContextMenuStrip contextMenuStrip1;
+        private ToolStripMenuItem meni1ToolStripMenuItem;
+        private ToolStripMenuItem menui2ToolStripMenuItem;
+        private ToolStripMenuItem menu3ToolStripMenuItem;
+        private ComboBox comboBox1;
+        private Button button2;
     }
 }

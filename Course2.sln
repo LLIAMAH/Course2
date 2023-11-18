@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Course2ConsoleCore5", "Cour
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClassLibrary1", "ClassLibrary1\ClassLibrary1.csproj", "{618885F3-31BA-4008-BA2B-9D2F009DB7DB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinFormsApp1", "WinFormsApp1\WinFormsApp1.csproj", "{4E602FCE-F44F-4E35-B792-E99FF1873556}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WinFormsApp1", "WinFormsApp1\WinFormsApp1.csproj", "{4E602FCE-F44F-4E35-B792-E99FF1873556}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkWithFiles", "WorkWithFiles\WorkWithFiles.csproj", "{79723BA9-FFCA-494D-BE1D-8348C15B272F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{4E602FCE-F44F-4E35-B792-E99FF1873556}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4E602FCE-F44F-4E35-B792-E99FF1873556}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4E602FCE-F44F-4E35-B792-E99FF1873556}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79723BA9-FFCA-494D-BE1D-8348C15B272F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79723BA9-FFCA-494D-BE1D-8348C15B272F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79723BA9-FFCA-494D-BE1D-8348C15B272F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79723BA9-FFCA-494D-BE1D-8348C15B272F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
