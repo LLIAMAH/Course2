@@ -1,6 +1,27 @@
 ﻿
 
+var a = 44;
+var b = 12;
+
+//var cl = new Comparer();
+//var result = cl.Max(a, b);
+
+var result = Test1.Max(a, b);
+
 Console.WriteLine("Hello world!");
+
+public static class Test1
+{
+    public static int Max(int a, int b)
+    {
+        if (a > b)
+            return a;
+
+        return b;
+    }
+}
+
+
 
 
 //using System.Collections.Generic;

@@ -36,6 +36,8 @@
             lbResultXml = new ListBox();
             bnReadXml = new Button();
             bnWriteXml = new Button();
+            button1 = new Button();
+            button2 = new Button();
             SuspendLayout();
             // 
             // bnOldWrite
@@ -116,11 +118,33 @@
             bnWriteXml.UseVisualStyleBackColor = true;
             bnWriteXml.Click += bnWriteXml_Click;
             // 
+            // button1
+            // 
+            button1.Location = new Point(1142, 51);
+            button1.Name = "button1";
+            button1.Size = new Size(196, 141);
+            button1.TabIndex = 8;
+            button1.Text = "button1";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
+            // button2
+            // 
+            button2.Location = new Point(1142, 198);
+            button2.Name = "button2";
+            button2.Size = new Size(196, 141);
+            button2.TabIndex = 9;
+            button2.Text = "button2";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
+            // 
             // FMain
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1387, 679);
+            Controls.Add(button2);
+            Controls.Add(button1);
             Controls.Add(lbResultXml);
             Controls.Add(bnReadXml);
             Controls.Add(bnWriteXml);
@@ -144,5 +168,7 @@
         private ListBox lbResultXml;
         private Button bnReadXml;
         private Button bnWriteXml;
+        private Button button1;
+        private Button button2;
     }
 }

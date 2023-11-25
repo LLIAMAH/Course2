@@ -1,12 +1,15 @@
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Xml.Serialization;
+using WorkWithFiles.Forms;
+using WorkWithFiles.Interfaces;
 
 namespace WorkWithFiles
 {
     public partial class FMain : Form
     {
         private int _stringLength;
+        private string _data;
         private const string _folderName = "C:\\Temp\\Course";
         private const string _fileNameOld = "OldScholData.dat";
         private const string _fileNameBinary = "BinaryData.dat";
@@ -163,6 +166,33 @@ namespace WorkWithFiles
             var data = ReadFromXmlFile<List<Person>>(fullPath);
 
             lbResultXml.DataSource = data;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            using (IGetData form = new FGetData())
+            {
+                if(form.ShowDialog() == DialogResult.OK)
+                {
+                    this._data = form.GetData();
+                }
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            using (IGetSetData form = new FGetSetData())
+            {
+                form.SetData(this._data);
+                if (form.ShowDialog() == DialogResult.OK)
+                {
+                    this._data = form.GetData();
+                }
+            }
+
+            IFileOperation dataSource = new FileOperation();
+
+            var t = dataSource.GetDataFromFile<List<Person>>("C:\\Temp\\SomeFile.Txt");
         }
 
         private void WriteToXmlFile<T>(string fullPath, T objectToWrite)

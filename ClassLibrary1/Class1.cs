@@ -1,5 +1,12 @@
 ﻿namespace ClassLibrary1
 {
+    public class Test2
+    {
+        public string Name { get; set; }
+
+    }
+
+
     public interface ICar: IHasSpeed, ISetAngle // объединение интерфейсов
     {
 
