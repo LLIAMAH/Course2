@@ -13,7 +13,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WinFormsApp1", "WinFormsApp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorkWithFiles", "WorkWithFiles\WorkWithFiles.csproj", "{79723BA9-FFCA-494D-BE1D-8348C15B272F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp1", "ConsoleApp1\ConsoleApp1.csproj", "{33224970-5BB2-49D4-A02C-D5E237E7A07B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp1", "ConsoleApp1\ConsoleApp1.csproj", "{33224970-5BB2-49D4-A02C-D5E237E7A07B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleAppDatabase", "ConsoleAppDatabase\ConsoleAppDatabase.csproj", "{1380044E-EEFF-4A2D-B61B-2405BE34494F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Course2.DB", "Course2.DB\Course2.DB.csproj", "{B3450CFD-8C71-484C-AB6E-F62615D738BF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +49,14 @@ Global
 		{33224970-5BB2-49D4-A02C-D5E237E7A07B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{33224970-5BB2-49D4-A02C-D5E237E7A07B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{33224970-5BB2-49D4-A02C-D5E237E7A07B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1380044E-EEFF-4A2D-B61B-2405BE34494F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1380044E-EEFF-4A2D-B61B-2405BE34494F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1380044E-EEFF-4A2D-B61B-2405BE34494F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1380044E-EEFF-4A2D-B61B-2405BE34494F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3450CFD-8C71-484C-AB6E-F62615D738BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3450CFD-8C71-484C-AB6E-F62615D738BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3450CFD-8C71-484C-AB6E-F62615D738BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3450CFD-8C71-484C-AB6E-F62615D738BF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
