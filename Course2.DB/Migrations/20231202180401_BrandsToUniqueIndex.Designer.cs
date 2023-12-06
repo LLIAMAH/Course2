@@ -4,6 +4,7 @@ using Course2.DB;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Course2.DB.Migrations
 {
     [DbContext(typeof(AppDbCtx))]
-    partial class AppDbCtxModelSnapshot : ModelSnapshot
+    [Migration("20231202180401_BrandsToUniqueIndex")]
+    partial class BrandsToUniqueIndex
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -57,9 +60,6 @@ namespace Course2.DB.Migrations
                     b.Property<long?>("ColorId")
                         .HasColumnType("bigint");
 
-                    b.Property<long>("ModelId")
-                        .HasColumnType("bigint");
-
                     b.Property<string>("Number")
                         .IsRequired()
                         .HasMaxLength(128)
@@ -88,8 +88,6 @@ namespace Course2.DB.Migrations
                     b.HasIndex("BrandId");
 
                     b.HasIndex("ColorId");
-
-                    b.HasIndex("ModelId");
 
                     b.HasIndex("UserId");
 
@@ -164,29 +162,6 @@ namespace Course2.DB.Migrations
                         });
                 });
 
-            modelBuilder.Entity("Course2.DB.Entities.Model", b =>
-                {
-                    b.Property<long>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
-
-                    b.Property<long>("BrandId")
-                        .HasColumnType("bigint");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasMaxLength(256)
-                        .HasColumnType("nvarchar(256)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("BrandId");
-
-                    b.ToTable("Models");
-                });
-
             modelBuilder.Entity("Course2.DB.Entities.User", b =>
                 {
                     b.Property<long>("Id")
@@ -216,7 +191,7 @@ namespace Course2.DB.Migrations
             modelBuilder.Entity("Course2.DB.Entities.Car", b =>
                 {
                     b.HasOne("Course2.DB.Entities.Brand", "Brand")
-                        .WithMany("Cars")
+                        .WithMany()
                         .HasForeignKey("BrandId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -224,12 +199,6 @@ namespace Course2.DB.Migrations
                     b.HasOne("Course2.DB.Entities.Color", "Color")
                         .WithMany()
                         .HasForeignKey("ColorId");
-
-                    b.HasOne("Course2.DB.Entities.Model", "Model")
-                        .WithMany()
-                        .HasForeignKey("ModelId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
 
                     b.HasOne("Course2.DB.Entities.User", "Owner")
                         .WithMany("Cars")
@@ -241,27 +210,7 @@ namespace Course2.DB.Migrations
 
                     b.Navigation("Color");
 
-                    b.Navigation("Model");
-
                     b.Navigation("Owner");
-                });
-
-            modelBuilder.Entity("Course2.DB.Entities.Model", b =>
-                {
-                    b.HasOne("Course2.DB.Entities.Brand", "Brand")
-                        .WithMany("Models")
-                        .HasForeignKey("BrandId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Brand");
-                });
-
-            modelBuilder.Entity("Course2.DB.Entities.Brand", b =>
-                {
-                    b.Navigation("Cars");
-
-                    b.Navigation("Models");
                 });
 
             modelBuilder.Entity("Course2.DB.Entities.User", b =>

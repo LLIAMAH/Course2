@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Course2.DB.Entities
 {
-    [Index(nameof(Name))]
+    [Index(nameof(Name), IsUnique = true)]
     public class Brand
     {
         [Key]
@@ -11,5 +11,9 @@ namespace Course2.DB.Entities
         [Required]
         [MaxLength(128)]
         public string Name { get; set; }
+
+        public virtual ICollection<Car> Cars { get; set; }
+
+        public virtual ICollection<Model> Models { get; set; }
     }
 }

@@ -19,6 +19,10 @@ namespace Course2.DB.Entities
         [Required]
         public virtual Brand Brand { get; set; }
 
+        [ForeignKey(nameof(Model))]
+        public long ModelId { get; set; }
+        public virtual Model Model { get; set; }
+
         [ForeignKey(nameof(Owner))]
         public long UserId { get; set; }
         public virtual User Owner { get; set; }

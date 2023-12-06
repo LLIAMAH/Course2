@@ -15,9 +15,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorkWithFiles", "WorkWithFi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp1", "ConsoleApp1\ConsoleApp1.csproj", "{33224970-5BB2-49D4-A02C-D5E237E7A07B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleAppDatabase", "ConsoleAppDatabase\ConsoleAppDatabase.csproj", "{1380044E-EEFF-4A2D-B61B-2405BE34494F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleAppDatabase", "ConsoleAppDatabase\ConsoleAppDatabase.csproj", "{1380044E-EEFF-4A2D-B61B-2405BE34494F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Course2.DB", "Course2.DB\Course2.DB.csproj", "{B3450CFD-8C71-484C-AB6E-F62615D738BF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Course2.DB", "Course2.DB\Course2.DB.csproj", "{B3450CFD-8C71-484C-AB6E-F62615D738BF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
