@@ -4,6 +4,7 @@ using Course2.DB;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Course2.DB.Migrations
 {
     [DbContext(typeof(AppDbCtx))]
-    partial class AppDbCtxModelSnapshot : ModelSnapshot
+    [Migration("20240113173703_AddNewTablesPersonAndAddress")]
+    partial class AddNewTablesPersonAndAddress
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -52,8 +55,9 @@ namespace Course2.DB.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<long>("CountryId")
-                        .HasColumnType("bigint");
+                    b.Property<string>("Country")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("House")
                         .IsRequired()
@@ -68,8 +72,6 @@ namespace Course2.DB.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("CountryId");
 
                     b.ToTable("Addresses");
                 });
@@ -216,23 +218,6 @@ namespace Course2.DB.Migrations
                         });
                 });
 
-            modelBuilder.Entity("Course2.DB.Entities.Country", b =>
-                {
-                    b.Property<long>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Countries");
-                });
-
             modelBuilder.Entity("Course2.DB.Entities.Model", b =>
                 {
                     b.Property<long>("Id")
@@ -318,17 +303,6 @@ namespace Course2.DB.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Course2.DB.Entities.Address", b =>
-                {
-                    b.HasOne("Course2.DB.Entities.Country", "Country")
-                        .WithMany("Addresses")
-                        .HasForeignKey("CountryId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Country");
-                });
-
             modelBuilder.Entity("Course2.DB.Entities.Car", b =>
                 {
                     b.HasOne("Course2.DB.Entities.Brand", "Brand")
@@ -378,11 +352,6 @@ namespace Course2.DB.Migrations
                     b.Navigation("Cars");
 
                     b.Navigation("Models");
-                });
-
-            modelBuilder.Entity("Course2.DB.Entities.Country", b =>
-                {
-                    b.Navigation("Addresses");
                 });
 
             modelBuilder.Entity("Course2.DB.Entities.User", b =>

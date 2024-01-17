@@ -162,10 +162,10 @@ namespace WinFormsApp1
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if(stack == null)
+            if (stack == null)
                 stack = new Stack<Person>();
 
-            if(queue == null)
+            if (queue == null)
                 queue = new Queue<Person>();
 
             var person1 = new Person() { Name = "Vasiliy", Surname = "H", BirthDate = new DateTime(1982, 10, 25) };
@@ -186,7 +186,7 @@ namespace WinFormsApp1
             var takenStack = stack.Pop();
             var takenQueue = queue.Dequeue();
 
-                                   // 0          // 1        // 2
+            // 0          // 1        // 2
             var a = new string[] { "Vasiliy", "Anastacia", "Bogdan" };
             var keyValue = new KeyValuePair<string, Person>(person1.Name, person1);
 
@@ -211,7 +211,7 @@ namespace WinFormsApp1
             //var person = dictionary["Anastacia"];
             // dictionary.Add("Anastacia", new Person(){}); <== Exception - ключ с таким значением уже есть и мы добавляем ещё один 
             //dictionary["Anastacia"] = new Person() { };
-            
+
             //dictionary["Anastacia2"] = new Person() { }; <= Exception - потому что ключ должен быть добавлен
             //dictionary.Add("Anastacia2", new Person(){});
 
@@ -252,10 +252,21 @@ namespace WinFormsApp1
 
             foreach (var items in listChuncked)
             {
-                
+
             }
 
             var t = 5;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            using (var form = new ModalForm())
+            {
+                if (form.ShowDialog() == DialogResult.OK)
+                {
+                    textBox3.Text = form.SomeInfo.SomeData;
+                }
+            }
         }
     }
 

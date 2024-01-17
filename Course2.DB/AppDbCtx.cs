@@ -12,7 +12,9 @@ namespace Course2.DB
         public DbSet<Brand> Brands { get; set; }
         public DbSet<Color> Colors{ get; set; }
         public DbSet<Model> Models { get; set; }
-
+        public DbSet<Person> Persons { get; set; }
+        public DbSet<Address> Addresses { get; set; }
+        public DbSet<Country> Countries { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

@@ -76,6 +76,8 @@
             editConfigureToolStripMenuItem = new ToolStripMenuItem();
             comboBox1 = new ComboBox();
             button2 = new Button();
+            button3 = new Button();
+            textBox3 = new TextBox();
             contextMenuStrip1.SuspendLayout();
             groupBox1.SuspendLayout();
             panel1.SuspendLayout();
@@ -481,11 +483,30 @@
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
             // 
+            // button3
+            // 
+            button3.Location = new Point(1496, 633);
+            button3.Name = "button3";
+            button3.Size = new Size(283, 114);
+            button3.TabIndex = 34;
+            button3.Text = "button3";
+            button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
+            // 
+            // textBox3
+            // 
+            textBox3.Location = new Point(1803, 653);
+            textBox3.Name = "textBox3";
+            textBox3.Size = new Size(226, 31);
+            textBox3.TabIndex = 35;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(2108, 827);
+            Controls.Add(textBox3);
+            Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(comboBox1);
             Controls.Add(radioButton5);
@@ -583,5 +604,7 @@
         private ToolStripMenuItem menu3ToolStripMenuItem;
         private ComboBox comboBox1;
         private Button button2;
+        private Button button3;
+        private TextBox textBox3;
     }
 }
