@@ -28,5 +28,15 @@ namespace WinFormsApp1
 
             DialogResult = DialogResult.OK;
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            DialogResult = DialogResult.Cancel;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            DialogResult = DialogResult.Retry;
+        }
     }
 }

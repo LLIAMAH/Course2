@@ -262,9 +262,23 @@ namespace WinFormsApp1
         {
             using (var form = new ModalForm())
             {
-                if (form.ShowDialog() == DialogResult.OK)
+                var result = form.ShowDialog();
+                switch (result)
                 {
-                    textBox3.Text = form.SomeInfo.SomeData;
+                    case DialogResult.OK:
+                    {
+                        textBox3.Text = form.SomeInfo.SomeData;
+                        break;
+                    }
+                    case DialogResult.Cancel:
+                    {
+                        break;
+                    }
+                    case DialogResult.Retry:
+                    {
+                        MessageBox.Show("Хреново пытаешься!");
+                        break;
+                    }
                 }
             }
         }
