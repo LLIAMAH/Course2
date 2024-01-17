@@ -6,10 +6,10 @@ namespace InfoBindingApp
     public partial class FMain : Form
     {
         private static string[] names = new[]
-            { "Vasiliy", "Bogdan", "Anastacia", "Oleg", "Ivan", "Nicolay", "Olga", "Varvara" };
+            { "Vasiliy", "Bogdan", "Anastacia", "Oleg", "Ivan", "Nicolay", "Olga", "Varvara", "Tets" };
 
         private static string[] surnames = new[]
-            { "Ivanov", "Petrov", "Sidorov", "Sologub", "Mikul", "Krasnov", "Orehov", "Tormoz" };
+            { "Ivanov", "Petrov", "Sidorov", "Sologub", "Mikul", "Krasnov", "Orehov", "Tormoz", "Volkov" };
 
         private readonly Random _rand;
         private readonly BindingList<Person> _list;
@@ -48,7 +48,12 @@ namespace InfoBindingApp
         private void bnUpdate_Click(object sender, EventArgs e)
         {
             var selected = lbData.SelectedItem as Person;
-            selected.Name = this.GenRandName();
+            var oldName = selected.Name;
+            string newName;
+            do
+            {
+                newName = this.GenRandName();
+            } while (oldName == newName);
         }
 
         private void bnDelete_Click(object sender, EventArgs e)
