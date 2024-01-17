@@ -19,9 +19,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleAppDatabase", "Conso
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Course2.DB", "Course2.DB\Course2.DB.csproj", "{B3450CFD-8C71-484C-AB6E-F62615D738BF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinFormDBsNew", "WinFormDBsNew\WinFormDBsNew.csproj", "{C40F6DB9-4816-4C85-A54A-949E5066ABC9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WinFormDBsNew", "WinFormDBsNew\WinFormDBsNew.csproj", "{C40F6DB9-4816-4C85-A54A-949E5066ABC9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinFormDBsOld", "WinFormDBsOld\WinFormDBsOld.csproj", "{D7A352B4-1B0C-4361-AB87-CD31B119AA20}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InfoBindingApp", "InfoBindingApp\InfoBindingApp.csproj", "{1AE471E5-862D-4724-986C-2C9388058583}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -69,6 +71,10 @@ Global
 		{D7A352B4-1B0C-4361-AB87-CD31B119AA20}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D7A352B4-1B0C-4361-AB87-CD31B119AA20}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D7A352B4-1B0C-4361-AB87-CD31B119AA20}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1AE471E5-862D-4724-986C-2C9388058583}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1AE471E5-862D-4724-986C-2C9388058583}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1AE471E5-862D-4724-986C-2C9388058583}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1AE471E5-862D-4724-986C-2C9388058583}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
