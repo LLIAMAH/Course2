@@ -38,6 +38,10 @@
             bnWriteXml = new Button();
             button1 = new Button();
             button2 = new Button();
+            textBox1 = new TextBox();
+            textBox2 = new TextBox();
+            button3 = new Button();
+            listBox1 = new ListBox();
             SuspendLayout();
             // 
             // bnOldWrite
@@ -97,6 +101,7 @@
             lbResultXml.Name = "lbResultXml";
             lbResultXml.Size = new Size(386, 279);
             lbResultXml.TabIndex = 7;
+            lbResultXml.SelectedIndexChanged += lbResultXml_SelectedIndexChanged;
             // 
             // bnReadXml
             // 
@@ -138,11 +143,49 @@
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
             // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(36, 464);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(365, 31);
+            textBox1.TabIndex = 10;
+            // 
+            // textBox2
+            // 
+            textBox2.Location = new Point(35, 520);
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(366, 31);
+            textBox2.TabIndex = 11;
+            // 
+            // button3
+            // 
+            button3.Location = new Point(977, 492);
+            button3.Name = "button3";
+            button3.Size = new Size(178, 104);
+            button3.TabIndex = 12;
+            button3.Text = "button3";
+            button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
+            // 
+            // listBox1
+            // 
+            listBox1.FormattingEnabled = true;
+            listBox1.ItemHeight = 25;
+            listBox1.Items.AddRange(new object[] { "Test 1", "Test 2", "Test 3" });
+            listBox1.Location = new Point(577, 460);
+            listBox1.Name = "listBox1";
+            listBox1.Size = new Size(330, 179);
+            listBox1.TabIndex = 13;
+            // 
             // FMain
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1387, 679);
+            Controls.Add(listBox1);
+            Controls.Add(button3);
+            Controls.Add(textBox2);
+            Controls.Add(textBox1);
             Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(lbResultXml);
@@ -156,6 +199,7 @@
             Name = "FMain";
             Text = "Form1";
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -170,5 +214,9 @@
         private Button bnWriteXml;
         private Button button1;
         private Button button2;
+        private TextBox textBox1;
+        private TextBox textBox2;
+        private Button button3;
+        private ListBox listBox1;
     }
 }

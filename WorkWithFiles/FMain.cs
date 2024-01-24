@@ -172,9 +172,25 @@ namespace WorkWithFiles
         {
             using (IGetData form = new FGetData())
             {
-                if(form.ShowDialog() == DialogResult.OK)
+                var receivedResult = form.ShowDialog();
+                switch (receivedResult)
                 {
-                    this._data = form.GetData();
+                    case DialogResult.OK:
+                    {
+                        this._data = form.GetData();
+                        textBox1.Text = this._data;
+                        break;
+                    }
+                    case DialogResult.No:
+                    {
+                        MessageBox.Show("Nothing was set as parameter.");
+                        break;
+                    }
+                    default:
+                    {
+                        MessageBox.Show("Unknown process.");
+                        break;
+                    }
                 }
             }
         }
@@ -193,6 +209,32 @@ namespace WorkWithFiles
             IFileOperation dataSource = new FileOperation();
 
             var t = dataSource.GetDataFromFile<List<Person>>("C:\\Temp\\SomeFile.Txt");
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            var selectedIndex = listBox1.SelectedIndex;
+            if (selectedIndex < 0)
+            {
+                MessageBox.Show("Items was not selected.");
+                return;
+            }
+
+            var selectedItem = listBox1.Items[selectedIndex] as string;
+            var stringNew = selectedItem.ToUpper();
+
+            listBox1.Items.RemoveAt(selectedIndex);
+            listBox1.Items.Insert(selectedIndex, stringNew);
+        }
+
+        private void lbResultXml_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var persons = lbResultXml.SelectedItems;
+            foreach (var personObject in persons)
+            {
+                var person = personObject as Person;
+                //var person1 = (Person)personObject;
+            }
         }
 
         private void WriteToXmlFile<T>(string fullPath, T objectToWrite)

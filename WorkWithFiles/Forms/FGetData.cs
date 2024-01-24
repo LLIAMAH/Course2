@@ -20,6 +20,10 @@ namespace WorkWithFiles.Forms
             {
                 DialogResult = DialogResult.OK;
             }
+            else
+            {
+                DialogResult = DialogResult.No;
+            }
         }
     }
 }
