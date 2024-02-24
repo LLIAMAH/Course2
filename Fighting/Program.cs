@@ -67,7 +67,6 @@ public class Person : IPerson
     private IArmor _armor;
     private IWeapon _weapon;
 
-
     public string Name { get; }
 
     public int HitPoints => _health;
