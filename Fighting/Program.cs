@@ -1,9 +1,6 @@
 ﻿using Fighting.Items;
 using Fighting.Person;
 using Fighting.Queue;
-using Fighting.Random;
-
-var rand = new Random();
 
 IShop shop = new Shop();
 
