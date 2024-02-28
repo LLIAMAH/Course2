@@ -4,9 +4,8 @@ using Fighting.Queue;
 using Fighting.Random;
 
 var rand = new Random();
-var dice = new Dice(rand);
 
-IShop shop = new Shop(dice);
+IShop shop = new Shop();
 
 IPerson person1 = new Person("Anastacia");
 IPerson person2 = new Person("Bohdan");
@@ -16,7 +15,7 @@ person2.PickArmor(shop.GetArmor());
 person1.PickWeapon(shop.GetWeapon());
 person2.PickWeapon(shop.GetWeapon());
 
-var order = Order.RollInitiative(dice, person1, person2);
+var order = Order.RollInitiative(person1, person2);
 do
 {
     order.Hits();

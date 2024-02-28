@@ -12,19 +12,14 @@
         D100 = 100
     }
 
-    public class Dice
+    public static class Dice
     {
-        private readonly System.Random _rand;
-
-        public Dice(System.Random rand)
-        {
-            this._rand = rand;
-        }
-
-        public int Roll(EDice dice = EDice.D10)
+        private static System.Random _rand = new System.Random();
+        
+        public static int Roll(EDice dice)
         {
             //_rand.Next(10): 0 1 2 3.. 9;
-            return this._rand.Next((int)dice) + 1;
+            return _rand.Next((int)dice) + 1;
         }
     }
 }

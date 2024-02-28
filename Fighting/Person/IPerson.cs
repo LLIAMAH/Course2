@@ -18,7 +18,7 @@ namespace Fighting.Person
         void Attack(IPerson enemy);
         void PickArmor(IArmor armor);
         void PickWeapon(IWeapon weapon);
-        int Initiative(Dice dice);
+        int Initiative();
         bool HitArmor(int roll);
         void DecreaseHealth(int roll);
         EPersonStatus CheckStatus();

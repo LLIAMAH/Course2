@@ -36,15 +36,15 @@ namespace Fighting.Queue
                 : $"The winner is - {this.First.Name} hp:{this.Last.HitPoints}";
         }
 
-        public static IOrder RollInitiative(Dice dice, IPerson p1, IPerson p2)
+        public static IOrder RollInitiative(IPerson p1, IPerson p2)
         {
             int roll1;
             int roll2;
 
             do
             {
-                roll1 = p1.Initiative(dice);
-                roll2 = p2.Initiative(dice);
+                roll1 = p1.Initiative();
+                roll2 = p2.Initiative();
             } while (roll1 != roll2);
 
             return roll1 > roll2

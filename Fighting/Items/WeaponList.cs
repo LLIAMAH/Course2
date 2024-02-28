@@ -4,9 +4,8 @@ namespace Fighting.Items
 {
     public class Knife : Weapon
     {
-        public Knife(Dice dice)
+        public Knife()
         {
-            this._dice = dice;
             this.Name = "Knife";
             this._hitDamage = EDice.D4;
         }
@@ -14,9 +13,8 @@ namespace Fighting.Items
 
     public class Sword : Weapon
     {
-        public Sword(Dice dice)
+        public Sword()
         {
-            this._dice = dice;
             this.Name = "Sword";
             this._hitDamage = EDice.D8;
         }
@@ -24,9 +22,8 @@ namespace Fighting.Items
 
     public class ShortSword : Weapon
     {
-        public ShortSword(Dice dice)
+        public ShortSword()
         {
-            this._dice = dice;
             this.Name = "ShortSword";
             this._hitDamage = EDice.D6;
         }
@@ -34,9 +31,8 @@ namespace Fighting.Items
 
     public class Mace : Weapon
     {
-        public Mace(Dice dice)
+        public Mace()
         {
-            this._dice = dice;
             this.Name = "Mace";
             this._hitDamage = EDice.D6;
         }
@@ -44,9 +40,8 @@ namespace Fighting.Items
 
     public class Spear : Weapon
     {
-        public Spear(Dice dice)
+        public Spear()
         {
-            this._dice = dice;
             this.Name = "Spear";
             this._hitDamage = EDice.D8;
         }
@@ -54,9 +49,8 @@ namespace Fighting.Items
 
     public class GreatSword : Weapon
     {
-        public GreatSword(Dice dice)
+        public GreatSword()
         {
-            this._dice = dice;
             this.Name = "GreatSword";
             this._hitDamage = EDice.D12;
         }

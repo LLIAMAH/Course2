@@ -39,9 +39,9 @@ namespace Fighting.Person
             Console.WriteLine($"{this.Name} picks weapon: {weapon.Name}");
         }
 
-        public int Initiative(Dice dice)
+        public int Initiative()
         {
-            return dice.Roll(EDice.D20);
+            return Dice.Roll(EDice.D20);
         }
 
         public bool HitArmor(int roll)
