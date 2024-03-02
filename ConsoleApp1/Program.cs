@@ -50,7 +50,6 @@ class Pult : IPult
 {
     // Это зависимость
     private readonly IReceiver _receiver;
-    public IReceiver Receiver { get; set; }
 
     // Dependency Injection: Внедрение зависимости
     public Pult(IReceiver receiver)
