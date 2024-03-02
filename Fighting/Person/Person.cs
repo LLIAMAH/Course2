@@ -7,6 +7,8 @@ namespace Fighting.Person
     {
         private const int maxHealth = 100;
 
+        private int[] _attributes;
+
         private int _health;
         private IArmor _armor;
         private IWeapon _weapon;
