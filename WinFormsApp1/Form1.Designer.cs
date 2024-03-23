@@ -78,6 +78,8 @@
             button2 = new Button();
             button3 = new Button();
             textBox3 = new TextBox();
+            bnShowModal = new Button();
+            tbModalFormOutput = new TextBox();
             contextMenuStrip1.SuspendLayout();
             groupBox1.SuspendLayout();
             panel1.SuspendLayout();
@@ -475,7 +477,7 @@
             // 
             // button2
             // 
-            button2.Location = new Point(1146, 606);
+            button2.Location = new Point(1096, 494);
             button2.Name = "button2";
             button2.Size = new Size(225, 97);
             button2.TabIndex = 33;
@@ -500,11 +502,31 @@
             textBox3.Size = new Size(226, 31);
             textBox3.TabIndex = 35;
             // 
+            // bnShowModal
+            // 
+            bnShowModal.Location = new Point(1111, 667);
+            bnShowModal.Name = "bnShowModal";
+            bnShowModal.Size = new Size(197, 73);
+            bnShowModal.TabIndex = 36;
+            bnShowModal.Text = "Show modal form";
+            bnShowModal.UseVisualStyleBackColor = true;
+            bnShowModal.Click += bnShowModal_Click;
+            // 
+            // tbModalFormOutput
+            // 
+            tbModalFormOutput.Location = new Point(1064, 746);
+            tbModalFormOutput.Name = "tbModalFormOutput";
+            tbModalFormOutput.ReadOnly = true;
+            tbModalFormOutput.Size = new Size(304, 31);
+            tbModalFormOutput.TabIndex = 37;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(2108, 827);
+            Controls.Add(tbModalFormOutput);
+            Controls.Add(bnShowModal);
             Controls.Add(textBox3);
             Controls.Add(button3);
             Controls.Add(button2);
@@ -606,5 +628,7 @@
         private Button button2;
         private Button button3;
         private TextBox textBox3;
+        private Button bnShowModal;
+        private TextBox tbModalFormOutput;
     }
 }

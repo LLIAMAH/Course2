@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
+using WinFormsApp1.Forms;
 
 namespace WinFormsApp1
 {
@@ -266,19 +267,31 @@ namespace WinFormsApp1
                 switch (result)
                 {
                     case DialogResult.OK:
-                    {
-                        textBox3.Text = form.SomeInfo.SomeData;
-                        break;
-                    }
+                        {
+                            textBox3.Text = form.SomeInfo.SomeData;
+                            break;
+                        }
                     case DialogResult.Cancel:
-                    {
-                        break;
-                    }
+                        {
+                            break;
+                        }
                     case DialogResult.Retry:
-                    {
-                        MessageBox.Show("Хреново пытаешься!");
-                        break;
-                    }
+                        {
+                            MessageBox.Show("Хреново пытаешься!");
+                            break;
+                        }
+                }
+            }
+        }
+
+        private void bnShowModal_Click(object sender, EventArgs e)
+        {
+            using (var form = new FSomeData())
+            {
+                if (form.ShowDialog() == DialogResult.OK)
+                {
+                    var data = form.GetData();
+                    tbModalFormOutput.Text = $"{data.Title} ({data.Genre})";
                 }
             }
         }
