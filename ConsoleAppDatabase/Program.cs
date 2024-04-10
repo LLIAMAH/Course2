@@ -72,6 +72,7 @@ using (var ctx = new AppDbCtx())
 ////            {
 ////                Console.WriteLine(
 ////                    $"{dataReader[0]}, {dataReader[1]}, {dataReader[2]}, {dataReader[3]}, {dataReader[4]}, {dataReader[5]}, {dataReader[6]}, {dataReader[7]}, {dataReader[8]}, {dataReader[9]}.");
+                    //  $"{dataReader["Id"]}, {dataReader["Title"]}, {dataReader[2]}, {dataReader[3]}, {dataReader[4]}, {dataReader[5]}, {dataReader[6]}, {dataReader[7]}, {dataReader[8]}, {dataReader[9]}.");
 ////            }
 ////        }
 ////    }
