@@ -1,5 +1,8 @@
-﻿namespace DelegatesEventsApp.Controls
+﻿using System.ComponentModel;
+
+namespace DelegatesEventsApp.Controls
 {
+    [DefaultEvent(nameof(OnFilesFiltered))]
     public partial class BrowseFolder : UserControl
     {
         public event EventHandler<IList<TreeNode>> OnFilesFiltered;

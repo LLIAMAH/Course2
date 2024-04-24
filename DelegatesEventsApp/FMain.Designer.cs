@@ -31,6 +31,8 @@
             bfSource = new Controls.BrowseFolder();
             bfDestination = new Controls.BrowseFolder();
             bnMoveTo = new Button();
+            browseFolder1 = new Controls.BrowseFolder();
+            button1 = new Button();
             SuspendLayout();
             // 
             // bfSource
@@ -50,6 +52,7 @@
             bfDestination.Name = "bfDestination";
             bfDestination.Size = new Size(544, 529);
             bfDestination.TabIndex = 1;
+            bfDestination.AutoSizeChanged += bfDestination_OnFilesFiltered;
             // 
             // bnMoveTo
             // 
@@ -60,11 +63,33 @@
             bnMoveTo.Text = "==>";
             bnMoveTo.UseVisualStyleBackColor = true;
             // 
+            // browseFolder1
+            // 
+            browseFolder1.Location = new Point(1360, 12);
+            browseFolder1.MaximumSize = new Size(544, 529);
+            browseFolder1.MinimumSize = new Size(544, 529);
+            browseFolder1.Name = "browseFolder1";
+            browseFolder1.Size = new Size(544, 529);
+            browseFolder1.TabIndex = 3;
+            browseFolder1.OnFilesFiltered += browseFolder1_OnFilesFiltered;
+            // 
+            // button1
+            // 
+            button1.Location = new Point(615, 611);
+            button1.Name = "button1";
+            button1.Size = new Size(288, 110);
+            button1.TabIndex = 4;
+            button1.Text = "button1";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
             // FMain
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1523, 863);
+            ClientSize = new Size(2113, 863);
+            Controls.Add(button1);
+            Controls.Add(browseFolder1);
             Controls.Add(bnMoveTo);
             Controls.Add(bfDestination);
             Controls.Add(bfSource);
@@ -78,5 +103,7 @@
         private Controls.BrowseFolder bfSource;
         private Controls.BrowseFolder bfDestination;
         private Button bnMoveTo;
+        private Controls.BrowseFolder browseFolder1;
+        private Button button1;
     }
 }

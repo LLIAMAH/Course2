@@ -13,5 +13,20 @@ namespace DelegatesEventsApp
         {
             bnMoveTo.Enabled = true;
         }
+
+        private void bfDestination_OnFilesFiltered(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void browseFolder1_OnFilesFiltered(object sender, IList<TreeNode> e)
+        {
+
+        }
     }
 }
