@@ -1,4 +1,59 @@
-﻿//var a = 234;
+﻿//using System.IO;
+
+//DirectoryInfo di = new DirectoryInfo("C:\\Temp\\Cars");
+
+//if (di.Exists)
+//{
+//    var files = GetAllFiles(di);
+
+//    ////".txt"
+//    foreach (var fileInfo in files)
+//    {
+//        var size = (double)fileInfo.Length / (1024 * 1024);
+//        Console.WriteLine($"{fileInfo.Name} - {size:F3}MB");
+//    }
+//}
+
+//var str = "   asdfasdfasdfasdf             ";
+//str = str.Trim();
+
+//var path = Directory.GetFiles( "C:\\Temp\\Cars");
+//File.SetAttributes(path[0], FileAttributes.Hidden);
+
+
+
+
+//FileInfo[] files = di.GetFiles();
+//DirectoryInfo[] subDirs = di.GetDirectories();
+
+//return;
+
+//public class Test : IDisposable
+//{
+//    public void Dispose()
+//    {
+//        // TODO release managed resources here
+//    }
+//}
+
+//List<FileInfo> GetAllFiles(DirectoryInfo dir)
+//{
+//    var result = new List<FileInfo>();
+//    foreach (var directoryInfo in dir.GetDirectories())
+//    {
+//        var files = GetAllFiles(directoryInfo);
+//        result.AddRange(files);
+//    }
+
+//    foreach (var fileInfo in dir.GetFiles())
+//    {
+//        result.Add(fileInfo);
+//    }
+
+//    return result;
+//}
+
+//var a = 234;
 //var b = (object)a;
 //var c = (int)b;
 
