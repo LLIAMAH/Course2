@@ -33,7 +33,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DelegatesEventsLib", "Deleg
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DelegatesEventsApp", "DelegatesEventsApp\DelegatesEventsApp.csproj", "{368A6592-82F5-4D3D-A35E-80584870CAE1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleAppTest1", "ConsoleAppTest1\ConsoleAppTest1.csproj", "{8D1F3DEE-0BEA-4647-94C3-2AA3004962EE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleAppTest1", "ConsoleAppTest1\ConsoleAppTest1.csproj", "{8D1F3DEE-0BEA-4647-94C3-2AA3004962EE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Deleagates", "Deleagates\Deleagates.csproj", "{094E7298-821B-44F1-A540-24C2F1D9B403}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -105,6 +107,10 @@ Global
 		{8D1F3DEE-0BEA-4647-94C3-2AA3004962EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8D1F3DEE-0BEA-4647-94C3-2AA3004962EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8D1F3DEE-0BEA-4647-94C3-2AA3004962EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{094E7298-821B-44F1-A540-24C2F1D9B403}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{094E7298-821B-44F1-A540-24C2F1D9B403}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{094E7298-821B-44F1-A540-24C2F1D9B403}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{094E7298-821B-44F1-A540-24C2F1D9B403}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
