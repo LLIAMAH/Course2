@@ -4,6 +4,34 @@ using Microsoft.EntityFrameworkCore;
 
 using (var ctx = new AppDbCtx())
 {
+    var data = await GetAddressAsync(ctx);
+
+    //...
+    //...
+    //...
+    //...
+    //...
+    //...
+    //...
+    //...
+    //...
+    //...
+
+    //var dataConcrete1 = await data;
+    //var dataConcrete2 = data.GetAwaiter().GetResult();
+
+    //...
+    //...
+    //...
+    //...
+    //...
+
+    foreach (var address in data)
+    {
+        
+    }
+
+
     var result = ctx.Addresses
         .Include(o => o.Country)
         .ToList();
@@ -11,6 +39,28 @@ using (var ctx = new AppDbCtx())
     {
         Console.WriteLine($"{address.Id}, {address.Country.Name}, {address.StateProvince}, {address.City}, {address.Street}, {address.House}, {address.Apartments}");
     }
+}
+
+return;
+
+Task<List<Address>> GetAddressAsync(AppDbCtx ctx)
+{
+    return ctx.Addresses.Where(o => o.City == "Riga").ToListAsync();
+}
+
+async Task<AddressComplex> GetAddressComplexAsync(AppDbCtx ctx)
+{
+    return new AddressComplex
+    {
+        City = (await ctx.Addresses.FirstOrDefaultAsync(o => o.City == "Riga"))?.City,
+        Countries = await ctx.Countries.ToListAsync()
+    };
+}
+
+public class AddressComplex
+{
+    public string? City { get; set; }
+    public List<Country> Countries { get; set; }
 }
 
 //using (var ctx = new AppDbCtx())
@@ -72,7 +122,7 @@ using (var ctx = new AppDbCtx())
 ////            {
 ////                Console.WriteLine(
 ////                    $"{dataReader[0]}, {dataReader[1]}, {dataReader[2]}, {dataReader[3]}, {dataReader[4]}, {dataReader[5]}, {dataReader[6]}, {dataReader[7]}, {dataReader[8]}, {dataReader[9]}.");
-                    //  $"{dataReader["Id"]}, {dataReader["Title"]}, {dataReader[2]}, {dataReader[3]}, {dataReader[4]}, {dataReader[5]}, {dataReader[6]}, {dataReader[7]}, {dataReader[8]}, {dataReader[9]}.");
+//  $"{dataReader["Id"]}, {dataReader["Title"]}, {dataReader[2]}, {dataReader[3]}, {dataReader[4]}, {dataReader[5]}, {dataReader[6]}, {dataReader[7]}, {dataReader[8]}, {dataReader[9]}.");
 ////            }
 ////        }
 ////    }
