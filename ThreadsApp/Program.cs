@@ -1,5 +1,4 @@
-﻿// See https://aka.ms/new-console-template for more information
-
+﻿/*
 var list = new List<int>();
 for (var i = 0; i < 10_000; i++)
 {
@@ -18,6 +17,36 @@ foreach (var threadOld in threads)
 {
     threadOld.Start(null);
 }
+*/
+
+var cts = new CancellationTokenSource();
+var token = cts.Token;
+
+var tasks = new List<Task>();
+for (var i = 0; i < 20; i++)
+{
+    tasks.Add(new Task(action: () =>
+    {
+        var guid = Guid.NewGuid();
+        const int counterMax = 100;
+        var counter = 0;
+        while (counter < counterMax)
+        {
+            if (token.IsCancellationRequested)
+                break;
+
+            Console.WriteLine($"Thread#{guid}: {counter}");
+            counter++;
+        }
+    }, token));
+}
+
+foreach (var task in tasks)
+{
+    task.Start();
+}
+
+Task.WaitAll(tasks.ToArray());
 
 Console.WriteLine("All Threads are started.");
 
